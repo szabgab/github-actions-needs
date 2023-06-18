@@ -1,0 +1,22 @@
+name: Generate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '42 5 * * *'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    name: Generat
+    needs: [linter, test]
+
+    steps:
+    - name: Generate
+      run: |
+        echo This job only runs if both the linter and the test jobs were successful
+
+
+

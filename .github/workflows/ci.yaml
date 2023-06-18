@@ -16,7 +16,8 @@ jobs:
     - name: Build step
       run: |
         echo This is the placeholder for the compilation step
-        ls -l something_that_does_not_Exist
+        echo Enable the next line if you'd like to see what happens when the job fails.
+        # ls -l something_that_does_not_Exist
 
   test:
     runs-on: ubuntu-latest
@@ -27,6 +28,15 @@ jobs:
     - name: Test step
       run: |
         echo This job only runs if the build job was successful
+
+  linter:
+    runs-on: ubuntu-latest
+    name: Linter
+
+    steps:
+    - name: Linter step
+      run: |
+        echo This job is independent from the other, it can run in parallel to either the build job or the test-job
 
 
 
