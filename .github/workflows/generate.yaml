@@ -1,23 +1,10 @@
 name: Generate
 
 on:
-#  push:
-#  pull_request:
   workflow_call:
   workflow_dispatch:
-#  schedule:
-#    - cron: '42 5 * * *'
 
 jobs:
-#  empty:
-#    runs-on: ubuntu-latest
-#    name: Empty
-#    steps:
-#    - name: Empty
-#      run: |
-#        echo Empty
-#
-
   generate:
     runs-on: ubuntu-latest
     name: Generate
@@ -25,7 +12,18 @@ jobs:
     steps:
     - name: Generate
       run: |
-        echo This job only runs if both the linter and the test jobs were successful
+        echo This job only runs if both the linter and the test jobs were successful.
+        echo This is set in the ci.yaml file calling this file
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    needs: [generate]
+
+    steps:
+    - name: Deploy
+      run: |
+        echo This job only runs if the Generate job was successful.
 
 
 
