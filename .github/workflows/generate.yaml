@@ -25,5 +25,3 @@ jobs:
       run: |
         echo This job only runs if the Generate job was successful.
 
-
-
