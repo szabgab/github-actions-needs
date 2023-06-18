@@ -39,5 +39,6 @@ jobs:
         echo This job is independent from the other, it can run in parallel to either the build job or the test-job
 
   run-generate:
+    needs: [linter, test]
     uses: ./.github/workflows/generate.yaml
 

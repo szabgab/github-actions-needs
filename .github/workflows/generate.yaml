@@ -9,19 +9,18 @@ on:
 #    - cron: '42 5 * * *'
 
 jobs:
-  empty:
-    runs-on: ubuntu-latest
-    name: Empty
-    steps:
-    - name: Empty
-      run: |
-        echo Empty
-
+#  empty:
+#    runs-on: ubuntu-latest
+#    name: Empty
+#    steps:
+#    - name: Empty
+#      run: |
+#        echo Empty
+#
 
   generate:
     runs-on: ubuntu-latest
     name: Generate
-    needs: [linter, test]
 
     steps:
     - name: Generate
